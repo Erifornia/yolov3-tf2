@@ -9,6 +9,7 @@ from yolov3_tf2.models import (
 )
 from yolov3_tf2.dataset import transform_images
 from yolov3_tf2.utils import draw_outputs
+from IPython.display import display
 
 
 flags.DEFINE_string('classes', './data/coco.names', 'path to classes file')
