@@ -9,7 +9,7 @@ from yolov3_tf2.models import (
 )
 from yolov3_tf2.dataset import transform_images
 from yolov3_tf2.utils import draw_outputs
-from IPython.display import display
+from IPython.display import display, clear_output, Image
 
 
 flags.DEFINE_string('classes', './data/coco.names', 'path to classes file')
@@ -80,7 +80,8 @@ def main(_argv):
                           cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
         if FLAGS.output:
             out.write(img)
-        display(cv2_imshow(img))
+        clear_output(wait=True)
+        display(arrayShow(img))
         if cv2.waitKey(1) == ord('q'):
             break
 
