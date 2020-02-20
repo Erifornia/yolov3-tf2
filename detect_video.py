@@ -81,7 +81,7 @@ def main(_argv):
         if FLAGS.output:
             out.write(img)
         clear_output(wait=True)
-        display(Image(cv2_imshow(img)))
+        display(Image(data=bytes(cv2.imencode('.jpg', img)[1]), width=800))
         if cv2.waitKey(1) == ord('q'):
             break
 
